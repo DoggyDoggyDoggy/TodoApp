@@ -69,8 +69,8 @@ fun TodoListPage(viewModel: TodoViewModel) {
             items(todoList) {
                 TodoItem(
                     item = it,
-                    onDelete = {viewModel.deleteTodo(it.id)}
-                    )
+                    onDelete = { viewModel.deleteTodo(it.id) }
+                )
             }
         }
     }
@@ -80,7 +80,7 @@ fun TodoListPage(viewModel: TodoViewModel) {
 fun TodoItem(
     item: Todo,
     onDelete: () -> Unit
-    ) {
+) {
     Row(
         modifier = Modifier
             .heightIn(min = 75.dp)

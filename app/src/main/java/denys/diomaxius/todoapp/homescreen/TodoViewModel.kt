@@ -16,13 +16,13 @@ class TodoViewModel : ViewModel() {
     val todList: LiveData<List<Todo>> = todoDao.getAllTodo()
 
     fun addTodo(title: String) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             todoDao.addTodo(Todo(title = title, createdAt = Date.from(Instant.now())))
         }
     }
 
     fun deleteTodo(id: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             todoDao.deleteTodo(id)
         }
     }
